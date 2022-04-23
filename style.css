@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,800&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+:root{
+    --background: #0b0016;
+    --primary: #ffbd00;
+    --secondary: #ff60ce;
+    --black:#0a0a0a;
+    --grey: #9b9eac;
+    --white: #fff;
+    --main-font:'Mitr', sans-serif;
+    --secondary-font: 'Barlow', sans-serif;
+    --padding: 12%;
+}
+*{
+    box-sizing: border-box;
+    font-family: var(--secondary-font);
+}
+body{
+    width: 100%;
+    margin: 0;
+    background-color: var(--background);
+    color: var(--grey);
+}
+.main-nav{
+    display:flex;
+    flex: wrap;
+    padding: 0 var(--padding);
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.main-nav.fixed{
+    position: fixed;
+    background-color: var(--black);
+}
+.nav-img{
+    height: 5em;
+    width: 6em;
+    display: flex;
+    align-items: center;
+}
+.main-nav-elements{
+    display: flex;
+    margin: 0 0 0 auto;
+}
+.main-nav-element, .details-hover-element{
+    margin: auto 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    list-style: none;
+}
+.main-nav-element > a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 1em 0;
+}
+.main-nav-element:hover > a,.details-hover-element:hover > a{
+    color: var(--secondary);
+}
+.main-nav-element:first-child > a{
+    color: var(--primary);
+}
+.main-button{
+    border: 1px solid var(--primary);
+    background-color: #ffbd00;
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 1em 1.5em;
+    margin: auto 0;
+    transition: background 200ms linear;
+}
+.main-button:hover{
+    color: var(--primary);
+    background: transparent;
+}
+.details-hover{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 2em;
+    background-color: var(--white);
+    padding: 0;
+}
+.details-hover-element > a{
+    text-decoration: none;
+    color: var(--black);
+    padding: 1em;
+}
+.hover-holder{
+    position: relative;
+}
+.details-hover:hover .hover-holder{
+    visibility: visible;
+}
+.hover-holder:hover .details-hover{
+    visibility: visible;
+}
+.details-hover-element{
+    display: flex;
+}
+html{
+    scroll-behavior: smooth;
+}
+#Home{
+    height: 100vh;
+    background: url(images/background.jpg), linear-gradient(var(--black),transparent);
+    background-blend-mode: overlay;
+    display: flex;
+}
+#Home::before{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background : linear-gradient(to top,#0a001a,transparent 50%);
+}
+#Home > section{
+    justify-content: center;
+}
+#Home .home-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    padding: 5em var(--padding);
+    width: 100%;
+}
+h2,h3,h4,h5,h6{
+    color: var(--white);
+    font-family: var(--main-font);
+}
+h1{
+    font-size: 4.5em;
+    color: var(--primary);
+    font-weight: 900;
+}
+h1 > span{
+    color: var(--white);
+}
